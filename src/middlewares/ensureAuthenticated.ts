@@ -19,7 +19,6 @@ export const ensureAuthenticated = (req: Request, reply: Reply, done: Done) => {
     verify(token, process.env.JWT_KEY!);
     return done();
   } catch (error) {
-    reply.status(401);
     throw new Error("Unauthorized");
   }
 };
