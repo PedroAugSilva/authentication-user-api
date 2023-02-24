@@ -29,7 +29,7 @@ export class UserController {
     if (!passwordCompare) {
       throw new Error("Username or password invalid");
     }
-    const token = sign({}, "fe3697b4-2a22-40f1-bc57-f62f1d22d612", {
+    const token = sign({}, process.env.JWT_KEY!, {
       subject: alreadyExistUser.id,
       expiresIn: "20s",
     });

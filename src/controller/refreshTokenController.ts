@@ -23,7 +23,7 @@ export class RefreshTokenControlller {
       throw new Error("Token invalid");
     }
 
-    const token = sign({}, "fe3697b4-2a22-40f1-bc57-f62f1d22d612", {
+    const token = sign({}, process.env.JWT_KEY!, {
       subject: refreshToken.user_id,
       expiresIn: "20s",
     });

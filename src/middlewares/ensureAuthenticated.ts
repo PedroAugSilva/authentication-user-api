@@ -16,7 +16,7 @@ export const ensureAuthenticated = (req: Request, reply: Reply, done: Done) => {
   const [, token] = authToken.split(" ");
 
   try {
-    verify(token, "fe3697b4-2a22-40f1-bc57-f62f1d22d612");
+    verify(token, process.env.JWT_KEY!);
     return done();
   } catch (error) {
     reply.status(401);
