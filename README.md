@@ -4,7 +4,7 @@
 
  execute:  <code>npm run dev</code> ou <code>yarn dev</code> para rodar o servidor
 
-# Tecnlogias 🚀
+# Tecnologias 🚀
 
 - Fastify
 - Zod
